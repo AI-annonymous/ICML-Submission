@@ -37,7 +37,7 @@ python ./codebase/data_preprocessing/download_cub.py
 
 # References
 * [ResNet-101 on CUB-200](https://github.com/zhangyongshun/resnet_finetune_cub)
-* [VIT-B_16 on CUB-200] (https://github.com/TACJu/TransFG)
-* [Models and concepts for HAM10k and ISIC] (https://github.com/mertyg/post-hoc-cbm)
-* [FOL] (https://github.com/pietrobarbiero/entropy-lens)
-* [Concept Bottleneck Models] (https://github.com/yewsiang/ConceptBottleneck)
+* [VIT-B_16 on CUB-200](https://github.com/TACJu/TransFG)
+* [Models and concepts for HAM10k and ISIC](https://github.com/mertyg/post-hoc-cbm)
+* [FOL](https://github.com/pietrobarbiero/entropy-lens)
+* [Concept Bottleneck Models](https://github.com/yewsiang/ConceptBottleneck)
