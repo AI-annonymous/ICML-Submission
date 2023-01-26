@@ -36,3 +36,4 @@ update the correct paths in the variable `--data-root` for the `[files]_main.py`
 * [VIT-B_16 on CUB-200] (https://github.com/TACJu/TransFG)
 * [Models and concepts for HAM10k and ISIC] (https://github.com/mertyg/post-hoc-cbm)
 * [FOL] (https://github.com/pietrobarbiero/entropy-lens)
+* [Concept Bottleneck Models] (https://github.com/yewsiang/ConceptBottleneck)
