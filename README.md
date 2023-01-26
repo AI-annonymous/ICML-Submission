@@ -7,7 +7,7 @@ Use the file **environment.yml** to create the environment.
 ## Data Instructions
 
 Below we list the data sources to download the datasets we used to train / evaluate MoIEs. Once you download a dataset,
-update the correct paths in the variable `--data-root` for the `[files]_main.py` files.
+update the correct paths in the variable `--data-root` for the files containing main function in `./codebase/<files>`.
 
 ## Downloading the Data
 
