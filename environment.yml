@@ -312,4 +312,3 @@ dependencies:
     - zope-deprecation==4.4.0
     - zope-interface==5.4.0
     - zope-sqlalchemy==1.6
-prefix: /ocean/projects/asc170022p/shg121/anaconda3/envs/python_3_7_rtx_6000
