@@ -19,6 +19,10 @@ update the correct paths in the variable `--data-root` for the `[files]_main.py`
 | HAM10k  | Skin lesion classification dataset | [Kaggle Link](https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000)                                |
 | Awa2    | Animals with Attributes2           | [Awa2 official](https://cvml.ista.ac.at/AwA2/)                                                         |
 
+## Data preprocessing for CUB-200
+``` python
+python ./codebase/data_preprocessing/download_cub.py
+```
 ## Running the pipepline
 
 * Go the **scripts** folder and get the training scripts. For all the datasets, one script is included with proper
