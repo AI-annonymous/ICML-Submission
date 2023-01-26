@@ -4,18 +4,18 @@ import sys
 
 from BB.experiments_t_awa2 import test_t
 
-sys.path.append(os.path.abspath("/ocean/projects/asc170022p/shg121/PhD/ICLR-2022"))
+sys.path.append(os.path.abspath("root-path"))
 
 parser = argparse.ArgumentParser(description='AWA2 Training')
 parser.add_argument('--data-root', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/awa2',
+                    default='root-path/data/awa2',
                     help='path to dataset')
 parser.add_argument('--dataset', type=str, default="awa2", help='dataset name')
 parser.add_argument('--logs', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log',
+                    default='root-path/log',
                     help='path to tensorboard logs')
 parser.add_argument('--checkpoints', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints',
+                    default='root-path/checkpoints',
                     help='path to checkpoints')
 parser.add_argument('--checkpoint-file', metavar='file',
                     default='best_model_epoch_63.pth.tar',
@@ -24,7 +24,7 @@ parser.add_argument('--checkpoint-file-t', metavar='file',
                     default='best_model_epoch_200.pth.tar',
                     help='path to checkpoints for t')
 parser.add_argument('--output', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out',
+                    default='root-path/out',
                     help='path to output logs')
 parser.add_argument('--attribute-file-name', metavar='file',
                     default='attributes.npy',

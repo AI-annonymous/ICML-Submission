@@ -185,7 +185,7 @@ def get_model_explainer(args, device):
         config = CONFIGS["ViT-B_16"]
         # chkpt = os.path.join(args.checkpoints, args.dataset, 'BB', args.root_bb, args.arch, args.checkpoint_bb)
         chkpt = os.path.join(
-            "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-specific-classes/cub/explainer/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.95_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none/iter1/explainer_projected",
+            "root-path/checkpoints/spurious-cub-specific-classes/cub/explainer/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.95_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none/iter1/explainer_projected",
             "VIT_CUBS_8000_checkpoint.bin"
         )
         print(f"==>> Loading projected BB from : {chkpt}")

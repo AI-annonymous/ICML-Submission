@@ -390,7 +390,7 @@ def get_model(args, device):
             _config, _img_size, zero_head=True, num_classes=_num_classes, smoothing_value=_smoothing_value
         )
 
-        pre_trained = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/pretrained_VIT/ViT-B_16.npz"
+        pre_trained = "root-path/checkpoints/pretrained_VIT/ViT-B_16.npz"
         checkpoint = np.load(pre_trained)
         model.load_from(checkpoint)
         return model.to(device)

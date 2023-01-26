@@ -5,17 +5,17 @@ import sys
 from Explainer.experiments_explainer_CUB import train_baseline_post_hoc, test_baseline_post_hoc
 from Explainer.experiments_explainer_awa2 import train_glt
 
-sys.path.append(os.path.abspath("/ocean/projects/asc170022p/shg121/PhD/ICLR-2022"))
+sys.path.append(os.path.abspath("root-path"))
 
 parser = argparse.ArgumentParser(description='AWA2 Training')
 parser.add_argument('--data-root', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/awa2',
+                    default='root-path/data/awa2',
                     help='path to dataset')
 parser.add_argument('--logs', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log',
+                    default='root-path/log',
                     help='path to tensorboard logs')
 parser.add_argument('--checkpoints', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints',
+                    default='root-path/checkpoints',
                     help='path to checkpoints')
 parser.add_argument('--checkpoint-model', metavar='file', nargs="+",
                     default=['model_g_best_model_epoch_116.pth.tar'],
@@ -33,7 +33,7 @@ parser.add_argument('--checkpoint-t', metavar='file',
                     default='g_best_model_epoch_200.pth.tar',
                     help='checkpoint file of t')
 parser.add_argument('--output', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out',
+                    default='root-path/out',
                     help='path to output logs')
 parser.add_argument('--attribute-file-name', metavar='file',
                     default='attributes.npy',
@@ -88,7 +88,7 @@ parser.add_argument("--num_steps", default=10000, type=int,
                     help="Total number of training epochs to perform.")
 parser.add_argument('--prev_explainer_chk_pt_folder', metavar='path', nargs="+",
                     default=[
-                        "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/cub/explainer/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.2_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none/iter1",
+                        "root-path/checkpoints/cub/explainer/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.2_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none/iter1",
                     ],
                     help='checkpoint file of residual')
 

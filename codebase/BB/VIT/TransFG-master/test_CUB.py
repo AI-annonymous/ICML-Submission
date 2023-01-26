@@ -5,7 +5,7 @@ from __future__ import absolute_import, division, print_function
 import os
 import sys
 
-sys.path.append(os.path.abspath("/ocean/projects/asc170022p/shg121/PhD/ICLR-2022"))
+sys.path.append(os.path.abspath("root-path"))
 
 import argparse
 import logging
@@ -210,19 +210,19 @@ def main():
     parser = argparse.ArgumentParser()
     # Required parameters
     parser.add_argument('--data-root', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/spurious/waterbird_complete95_forest2water2',
+                        default='root-path/data/spurious/waterbird_complete95_forest2water2',
                         help='path to dataset')
     parser.add_argument('--json-root', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/codebase/data_preprocessing',
+                        default='root-path/codebase/data_preprocessing',
                         help='path to json files containing train-val-test split')
     parser.add_argument('--logs', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log/spurious-cub-waterbird-landbird',
+                        default='root-path/log/spurious-cub-waterbird-landbird',
                         help='path to tensorboard logs')
     parser.add_argument('--checkpoints', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-waterbird-landbird',
+                        default='root-path/checkpoints/spurious-cub-waterbird-landbird',
                         help='path to checkpoints')
     parser.add_argument('--output', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-waterbird-landbird',
+                        default='root-path/out/spurious-cub-waterbird-landbird',
                         help='path to output logs')
     parser.add_argument('--attribute-file-name', metavar='file',
                         default='attributes_spurious.npy',
@@ -240,7 +240,7 @@ def main():
                         help="Which variant to use.")
     parser.add_argument(
         "--pretrained_dir", type=str,
-        default="/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/pretrained_VIT/ViT-B_16.npz",
+        default="root-path/checkpoints/pretrained_VIT/ViT-B_16.npz",
         help="Where to search for pretrained ViT models."
     )
     parser.add_argument('--checkpoint-file', metavar='file',
@@ -378,7 +378,7 @@ def main():
     chk_pt_path = os.path.join(args.checkpoints, args.dataset, "BB", root, args.arch)
     output_path = os.path.join(args.output, args.dataset, "BB", root, args.arch)
     args.labels = ["0 (Landbird)", "1 (Waterbird)"]
-    args.output = f"/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-waterbird-landbird-{args.img_size}/cub/BB/lr_0.03_epochs_95/ViT-B_16"
+    args.output = f"root-path/out/spurious-cub-waterbird-landbird-{args.img_size}/cub/BB/lr_0.03_epochs_95/ViT-B_16"
     # Setup logging
     logging.basicConfig(
         filename=os.path.join(f"{output_path}", "VIT_test.log"),

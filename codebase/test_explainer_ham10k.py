@@ -4,30 +4,30 @@ import sys
 
 from Explainer.experiments_explainer_ham10k import test
 
-sys.path.append(os.path.abspath("/ocean/projects/asc170022p/shg121/PhD/ICLR-2022"))
+sys.path.append(os.path.abspath("root-path"))
 
 parser = argparse.ArgumentParser(description='CUB Training')
 parser.add_argument('--data-root', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/HAM10k',
+                    default='root-path/data/HAM10k',
                     help='path to dataset')
 parser.add_argument('--logs', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log',
+                    default='root-path/log',
                     help='path to tensorboard logs')
 parser.add_argument('--checkpoints', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints',
+                    default='root-path/checkpoints',
                     help='path to checkpoints')
 parser.add_argument('--output', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out',
+                    default='root-path/out',
                     help='path to output logs')
 parser.add_argument('--bb-dir', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/HAM10k/BB/Inception_V3',
+                    default='root-path/checkpoints/HAM10k/BB/Inception_V3',
                     help='path to BB')
 parser.add_argument('--seed', default=1, type=int, metavar='N', help='seed')
 parser.add_argument('--pretrained', type=bool, default=True, help='pretrained imagenet')
 parser.add_argument('--dataset', type=str, default="HAM10k", help='dataset name')
 parser.add_argument('--model-name', type=str, default="ham10000", help='name of the checkpoint')
 parser.add_argument(
-    '--derm7_folder', type=str, default="/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/Derm7pt",
+    '--derm7_folder', type=str, default="root-path/data/Derm7pt",
     help='DERM7_Folder'
 )
 parser.add_argument('--derm7_meta', type=str, default="meta.csv", help='DERM7_META')
@@ -49,7 +49,7 @@ parser.add_argument("--name", default="VIT_CUBS",
                     help="Name of this run. Used for monitoring.")
 parser.add_argument(
     "--pretrained_dir", type=str,
-    default="/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/pretrained_VIT/ViT-B_16.npz",
+    default="root-path/checkpoints/pretrained_VIT/ViT-B_16.npz",
     help="Where to search for pretrained ViT models."
 )
 parser.add_argument("--pretrained_model", type=str, default=None,
@@ -115,8 +115,8 @@ parser.add_argument('--checkpoint-residual', metavar='file', nargs="+",
                     help='checkpoint file of residual')
 parser.add_argument('--prev_explainer_chk_pt_folder', metavar='path', nargs="+",
                     default=[
-                        "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/HAM10k/explainer/lr_0.01_epochs_500_temperature-lens_0.7_input-size-pi_2048_cov_0.45_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.9_temperature-KD_10.0_hidden-layers_1/iter1",
-                        "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/HAM10k/explainer/lr_0.01_epochs_500_temperature-lens_0.7_input-size-pi_2048_cov_0.45_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.9_temperature-KD_10.0_hidden-layers_1/cov_0.2/iter2"],
+                        "root-path/checkpoints/HAM10k/explainer/lr_0.01_epochs_500_temperature-lens_0.7_input-size-pi_2048_cov_0.45_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.9_temperature-KD_10.0_hidden-layers_1/iter1",
+                        "root-path/checkpoints/HAM10k/explainer/lr_0.01_epochs_500_temperature-lens_0.7_input-size-pi_2048_cov_0.45_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.9_temperature-KD_10.0_hidden-layers_1/cov_0.2/iter2"],
                     help='checkpoint file of residual')
 
 parser.add_argument('--soft', default='y', type=str, metavar='N', help='soft/hard concept?')

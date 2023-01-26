@@ -44,8 +44,8 @@ class DenseNet121(nn.Module):
 
 
 if __name__ == "__main__":
-    # "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/mimic_cxr/BB/lr_0.01_epochs_60/densenet121/pneumonia_pneumothorax"
-    out_path = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/mimic_cxr/BB/lr_0.01_epochs_60/densenet121/pneumonia_pneumothorax/MIMIC_test_configs.pkl"
+    # "root-path/out/mimic_cxr/BB/lr_0.01_epochs_60/densenet121/pneumonia_pneumothorax"
+    out_path = "root-path/out/mimic_cxr/BB/lr_0.01_epochs_60/densenet121/pneumonia_pneumothorax/MIMIC_test_configs.pkl"
     args = pickle.load(open(out_path, "rb"))
     args.layer = "features_denseblock3"
     x = torch.rand(8, 3, 512, 512).cuda(args.gpu, non_blocking=True)

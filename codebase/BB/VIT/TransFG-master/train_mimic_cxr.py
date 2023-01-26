@@ -6,7 +6,7 @@ import os
 import pickle
 import sys
 
-sys.path.append(os.path.abspath("/ocean/projects/asc170022p/shg121/PhD/ICLR-2022"))
+sys.path.append(os.path.abspath("root-path"))
 # from BB.models.VIT_densenet import VisionTransformer, CONFIGS
 import argparse
 import logging
@@ -375,13 +375,13 @@ def main():
     parser = argparse.ArgumentParser()
     # Required parameters
     parser.add_argument('--logs', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log',
+                        default='root-path/log',
                         help='path to tensorboard logs')
     parser.add_argument('--checkpoints', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints',
+                        default='root-path/checkpoints',
                         help='path to checkpoints')
     parser.add_argument('--output', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out',
+                        default='root-path/out',
                         help='path to output logs')
     parser.add_argument("--name", default="VIT_mimic_cxr",
                         help="Name of this run. Used for monitoring.")
@@ -397,7 +397,7 @@ def main():
                         help="Which variant to use.")
     parser.add_argument(
         "--pretrained_dir", type=str,
-        default="/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/pretrained_VIT/ViT-B_16.npz",
+        default="root-path/checkpoints/pretrained_VIT/ViT-B_16.npz",
         help="Where to search for pretrained ViT models."
     )
     parser.add_argument("--pretrained_model", type=str, default=None,

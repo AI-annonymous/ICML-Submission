@@ -7,7 +7,7 @@ import sys
 
 from sklearn import metrics
 
-sys.path.append(os.path.abspath("/ocean/projects/asc170022p/shg121/PhD/ICLR-2022"))
+sys.path.append(os.path.abspath("root-path"))
 
 import argparse
 import logging
@@ -107,7 +107,7 @@ def setup(args):
     model.load_from(checkpoint)
     # if args.pretrained_model is not None:
     # model_chk_pt = os.path.join(
-    #     "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-specific-classes/cub/BB/lr_0.03_epochs_95/ViT-B_16",
+    #     "root-path/checkpoints/spurious-cub-specific-classes/cub/BB/lr_0.03_epochs_95/ViT-B_16",
     #     "VIT_CUBS_7000_checkpoint.bin")
     # pretrained_model = torch.load(model_chk_pt)['model']
     # model.load_state_dict(pretrained_model)
@@ -260,10 +260,10 @@ def train(args, model, chk_pt_path, output_path, tb_logs_path):
     global_step, best_acc = 0, 0
     start_time = time.time()
     attributes_train = torch.load(os.path.join(
-        "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-specific-classes/cub/t/lr_0.03_epochs_95_ViT-B_16_layer4_VIT_sgd_BCE/dataset_g",
+        "root-path/out/spurious-cub-specific-classes/cub/t/lr_0.03_epochs_95_ViT-B_16_layer4_VIT_sgd_BCE/dataset_g",
         "train_attributes.pt"))
     attribute_val = torch.load(os.path.join(
-        "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-specific-classes/cub/t/lr_0.03_epochs_95_ViT-B_16_layer4_VIT_sgd_BCE/dataset_g",
+        "root-path/out/spurious-cub-specific-classes/cub/t/lr_0.03_epochs_95_ViT-B_16_layer4_VIT_sgd_BCE/dataset_g",
         "test_attributes.pt"))
 
     attributes_train_selected = attributes_train[:, 108:110]
@@ -380,20 +380,20 @@ def main():
     # Required parameters
     parser.add_argument(
         '--data-root', metavar='DIR',
-        default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/spurious/CUB_200_2011',
+        default='root-path/data/spurious/CUB_200_2011',
         help='path to dataset'
     )
     parser.add_argument('--json-root', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/codebase/data_preprocessing',
+                        default='root-path/codebase/data_preprocessing',
                         help='path to json files containing train-val-test split')
     # parser.add_argument('--logs', metavar='DIR',
-    #                     default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log//spurious-cub-waterbird-landbird',
+    #                     default='root-path/log//spurious-cub-waterbird-landbird',
     #                     help='path to tensorboard logs')
     # parser.add_argument('--checkpoints', metavar='DIR',
-    #                     default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints//spurious-cub-waterbird-landbird',
+    #                     default='root-path/checkpoints//spurious-cub-waterbird-landbird',
     #                     help='path to checkpoints')
     # parser.add_argument('--output', metavar='DIR',
-    #                     default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out//spurious-cub-waterbird-landbird',
+    #                     default='root-path/out//spurious-cub-waterbird-landbird',
     #                     help='path to output logs')
     parser.add_argument('--attribute-file-name', metavar='file',
                         default='attributes_spurious.npy',
@@ -411,7 +411,7 @@ def main():
                         help="Which variant to use.")
     parser.add_argument(
         "--pretrained_dir", type=str,
-        default="/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/pretrained_VIT/ViT-B_16.npz",
+        default="root-path/checkpoints/pretrained_VIT/ViT-B_16.npz",
         help="Where to search for pretrained ViT models."
     )
     parser.add_argument("--pretrained_model", type=str, default=None,
@@ -628,9 +628,9 @@ def main():
     # output_path = os.path.join(args.output, args.dataset, "BB", root, args.arch)
     # tb_logs_path = os.path.join(args.logs, args.dataset, "BB", f"{root}_{args.arch}")
 
-    chk_pt_path = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/spurious-cub-specific-classes/cub/explainer/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.95_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none/iter1/explainer_projected"
-    tb_logs_path = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/logs/spurious-cub-specific-classes/cub/explainer/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.95_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none/iter1/explainer_projected"
-    output_path = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/spurious-cub-specific-classes/cub/explainer/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.95_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none/iter1/explainer_projected"
+    chk_pt_path = "root-path/checkpoints/spurious-cub-specific-classes/cub/explainer/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.95_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none/iter1/explainer_projected"
+    tb_logs_path = "root-path/logs/spurious-cub-specific-classes/cub/explainer/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.95_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none/iter1/explainer_projected"
+    output_path = "root-path/out/spurious-cub-specific-classes/cub/explainer/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.95_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none/iter1/explainer_projected"
 
     args.attribute_file_name = "attributes_spurious.npy"
     # args.labels = ["0 (Landbird)", "1 (Waterbird)"]

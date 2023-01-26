@@ -208,7 +208,7 @@ def fit_baseline(
 def predict_baseline(bb_model_bottom, model, concept_bank, val_loader, mode, output_path, device):
     # model.load_state_dict(
     #     torch.load(os.path.join(
-    #         "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/HAM10k/Baseline_PostHoc/lr_0.01_epochs_10_temperature-lens_0.7_input-size-pi_2048_lambda-lens_0.0001_hidden-layers_1",
+    #         "root-path/checkpoints/HAM10k/Baseline_PostHoc/lr_0.01_epochs_10_temperature-lens_0.7_input-size-pi_2048_lambda-lens_0.0001_hidden-layers_1",
     #         "g_best_model_epoch_8.pth.tar"
     #     ))["state_dict"]
     # )

@@ -47,7 +47,7 @@ if __name__ == '__main__':
         "deer", "bobcat", "pig", "lion", "mouse", "polar+bear", "collie",
         "walrus", "raccoon", "cow", "dolphin"
     ]
-    output_path = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/awa2/Baseline_PostHoc/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.45_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none"
+    output_path = "root-path/out/awa2/Baseline_PostHoc/ViT-B_16/lr_0.01_epochs_500_temperature-lens_6.0_use-concepts-as-pi-input_True_input-size-pi_2048_cov_0.45_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.99_temperature-KD_10.0_hidden-layers_1_layer_VIT_explainer_init_none"
     path = os.path.join(
         output_path,
         "cub-baseline_explanations.pkl",

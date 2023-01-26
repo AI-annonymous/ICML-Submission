@@ -495,7 +495,7 @@ if __name__ == "__main__":
     model = VisionTransformer(
         _config, _img_size, zero_head=True, num_classes=_num_classes, smoothing_value=_smoothing_value
     )
-    pre_trained = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/pretrained_VIT/ViT-B_16.npz"
+    pre_trained = "root-path/checkpoints/pretrained_VIT/ViT-B_16.npz"
     checkpoint = np.load(pre_trained)
     model.load_from(checkpoint)
     x = torch.rand(10, 3, _img_size, _img_size)
@@ -506,7 +506,7 @@ if __name__ == "__main__":
     print(_part_tokens.size())
     print(_part_tokens[:, 0].size())
 
-    # out_folder = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/cub/BB/lr_0.03_epochs_95/ViT-B_16"
+    # out_folder = "root-path/checkpoints/cub/BB/lr_0.03_epochs_95/ViT-B_16"
     # # torch.save(
     # #     model.state_dict(), os.path.join(out_folder, f"temp_g_best_model_epoch_10.pth.tar")
     # # )

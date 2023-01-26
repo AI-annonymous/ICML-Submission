@@ -16,7 +16,7 @@ MODEL_WEB_PATHS = {
 
 
 def load_model(
-        model_name, bb_dir="/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/HAM10k/BB/Inception_V3",
+        model_name, bb_dir="root-path/checkpoints/HAM10k/BB/Inception_V3",
         dataset="HAM10k"
 ):
     # Taken from the DDI repo https://drive.google.com/drive/folders/1oQ53WH_Tp6rcLZjRp_-UBOQcMl-b1kkP
@@ -156,7 +156,7 @@ def get_BB_model_isic(bb_dir, model_name, dataset):
 
 def main():
     print("Test BB for MIMIC_CXR")
-    bb_dir = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/HAM10k/BB/Inception_V3"
+    bb_dir = "root-path/checkpoints/HAM10k/BB/Inception_V3"
     model, model_bottom, model_top = get_model(bb_dir, model_name="ham10000")
     print(model)
 

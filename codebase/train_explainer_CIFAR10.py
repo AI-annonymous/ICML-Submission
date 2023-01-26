@@ -4,20 +4,20 @@ import sys
 
 from Explainer.experiments_explainer_cifar10 import test, train
 
-sys.path.append(os.path.abspath("/ocean/projects/asc170022p/shg121/PhD/ICLR-2022"))
+sys.path.append(os.path.abspath("root-path"))
 
 parser = argparse.ArgumentParser(description='CUB Training')
 parser.add_argument('--data-root', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/CIFAR100',
+                    default='root-path/data/CIFAR100',
                     help='path to dataset')
 parser.add_argument('--logs', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log',
+                    default='root-path/log',
                     help='path to tensorboard logs')
 parser.add_argument('--checkpoints', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints',
+                    default='root-path/checkpoints',
                     help='path to checkpoints')
 parser.add_argument('--output', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out',
+                    default='root-path/out',
                     help='path to output logs')
 parser.add_argument('--seed', default=0, type=int, metavar='N', help='seed')
 parser.add_argument('--pretrained', type=bool, default=True, help='pretrained imagenet')
@@ -38,7 +38,7 @@ parser.add_argument("--name", default="VIT_CUBS",
                     help="Name of this run. Used for monitoring.")
 parser.add_argument(
     "--pretrained_dir", type=str,
-    default="/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/pretrained_VIT/ViT-B_16.npz",
+    default="root-path/checkpoints/pretrained_VIT/ViT-B_16.npz",
     help="Where to search for pretrained ViT models."
 )
 parser.add_argument("--pretrained_model", type=str, default=None,
@@ -89,8 +89,8 @@ parser.add_argument('--epochs-residual', type=int, default=50, help='batch size 
 parser.add_argument('--lm', default=64.0, type=float, help='lagrange multiplier for selective KD loss')
 parser.add_argument('--prev_explainer_chk_pt_folder', metavar='path', nargs="+",
                     default=[
-                        "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/HAM10k/explainer/lr_0.01_epochs_500_temperature-lens_0.7_input-size-pi_2048_cov_0.45_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.9_temperature-KD_10.0_hidden-layers_1/iter1",
-                        "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/HAM10k/explainer/lr_0.01_epochs_500_temperature-lens_0.7_input-size-pi_2048_cov_0.45_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.9_temperature-KD_10.0_hidden-layers_1/cov_0.2/iter2"],
+                        "root-path/checkpoints/HAM10k/explainer/lr_0.01_epochs_500_temperature-lens_0.7_input-size-pi_2048_cov_0.45_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.9_temperature-KD_10.0_hidden-layers_1/iter1",
+                        "root-path/checkpoints/HAM10k/explainer/lr_0.01_epochs_500_temperature-lens_0.7_input-size-pi_2048_cov_0.45_alpha_0.5_selection-threshold_0.5_lambda-lens_0.0001_alpha-KD_0.9_temperature-KD_10.0_hidden-layers_1/cov_0.2/iter2"],
                     help='checkpoint file of residual')
 
 parser.add_argument('--root-bb', metavar='file',
@@ -100,7 +100,7 @@ parser.add_argument('--checkpoint-bb', metavar='file',
                     default='g_best_model_epoch_299.pth.tar',
                     help='checkpoint file of BB')
 parser.add_argument('--concept_file_name', type=str, default='RN50_10.0.pkl', help="concept_file_name")
-parser.add_argument('--concept_path', type=str, default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/CIFAR10/t', help="concept_path")
+parser.add_argument('--concept_path', type=str, default='root-path/out/CIFAR10/t', help="concept_path")
 parser.add_argument('--concept_names', metavar='file', nargs="+",
                     default=['loudspeaker', 'microwave', 'arm', 'exhaust_hood', 'airplane', 'pedestal', 'back', 'mouse', 'glass', 'polka_dots', 'mouth', 'keyboard', 'inside_arm', 'bird', 'bedclothes', 'paper', 'blind', 'brick', 'stairs', 'countertop', 'base', 'person', 'blueness', 'bathroom_s', 'pane', 'motorbike', 'hair', 'paw', 'candlestick', 'outside_arm', 'ceiling', 'light', 'street_s', 'column', 'door_frame', 'granite', 'cow', 'sand', 'bottle', 'cup', 'plate', 'double_door', 'pillow', 'plant', 'doorframe', 'eyebrow', 'flower', 'horse', 'toilet', 'ceramic', 'greenness', 'back_pillow', 'drawer', 'coach', 'metal', 'lid', 'bannister', 'handle_bar', 'fan', 'bush', 'blotchy', 'fireplace', 'bowl', 'nose', 'leg', 'door', 'stripes', 'apron', 'oven', 'pack', 'body', 'foot', 'frame', 'dining_room_s', 'board', 'bridge', 'sofa', 'bedroom_s', 'head', 'blurriness', 'footboard', 'leather', 'hand', 'fluorescent', 'tree', 'knob', 'headlight', 'blackness', 'house', 'jar', 'mirror', 'pipe', 'bathtub', 'flag', 'refrigerator', 'curtain', 'book', 'coffee_table', 'field', 'chandelier', 'cap', 'hill', 'ashcan', 'path', 'counter', 'cardboard', 'desk', 'balcony', 'box', 'napkin', 'ear', 'food', 'manhole', 'chest_of_drawers', 'fence', 'building', 'figurine', 'lamp', 'basket', 'eye', 'ground', 'car', 'cat', 'bookcase', 'palm', 'water', 'bus', 'laminate', 'handle', 'painted', 'dog', 'bumper', 'concrete', 'awning', 'clock', 'faucet', 'headboard', 'canopy', 'bucket', 'drinking_glass', 'armchair', 'minibike', 'carpet', 'cabinet', 'bed', 'earth', 'neck', 'can', 'bicycle', 'bag', 'chain_wheel', 'beak', 'mountain', 'redness', 'air_conditioner', 'chair', 'engine', 'painting', 'grass', 'snow', 'pillar', 'chimney', 'floor', 'fabric', 'computer', 'flowerpot', 'muzzle', 'bench', 'ottoman', 'cushion'],
                     help='checkpoint file of residual')

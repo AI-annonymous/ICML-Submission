@@ -10,7 +10,7 @@ from torch.utils.data import Dataset
 from torchvision import datasets
 from torchvision import transforms
 
-DERM7_FOLDER = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/Derm7pt"
+DERM7_FOLDER = "root-path/data/Derm7pt"
 
 
 class DermDataset(Dataset):

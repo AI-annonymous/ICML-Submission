@@ -215,13 +215,13 @@ parser.add_argument('--mini-data', default=None, type=int, help='small dataset f
 
 # GLT specific setting
 parser.add_argument('--logs', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log',
+                    default='root-path/log',
                     help='path to tensorboard logs')
 parser.add_argument('--checkpoints', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints',
+                    default='root-path/checkpoints',
                     help='path to checkpoints')
 parser.add_argument('--output', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out',
+                    default='root-path/out',
                     help='path to output logs')
 parser.add_argument('--pretrained', type=bool, default=True, help='pretrained imagenet')
 parser.add_argument('--dataset', type=str, default="mimic_cxr", help='dataset name')

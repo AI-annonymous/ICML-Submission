@@ -73,7 +73,7 @@ def test_dataset():
             mean=[0.485, 0.456, 0.406],
             std=[0.229, 0.224, 0.225])
     ])
-    dataset_path = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out/mnist/t/lr_0.001_epochs_300_ResNet50_layer4_adaptive_sgd_BCE/dataset_g"
+    dataset_path = "root-path/out/mnist/t/lr_0.001_epochs_300_ResNet50_layer4_adaptive_sgd_BCE/dataset_g"
     dataset = Dataset_mnist_for_explainer(train_set, dataset_path, "train_proba_concepts.pt", "train_class_labels.pt",
                                           "train_attributes.pt", transform)
     dataloader = DataLoader(dataset, batch_size=10, shuffle=True)

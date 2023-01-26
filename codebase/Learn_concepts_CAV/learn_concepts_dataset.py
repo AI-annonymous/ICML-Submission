@@ -19,7 +19,7 @@ def create_concept_bank(args):
     backbone = backbone.eval()
     print("Backbone is loaded")
 
-    path = "/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/CUB_200_2011/class_attr_data_10"
+    path = "root-path/data/CUB_200_2011/class_attr_data_10"
     metadata = pickle.load(open(path+"/train.pkl", "rb"))
     n_concepts = len(metadata[0]["attribute_label"])
     print(n_concepts)

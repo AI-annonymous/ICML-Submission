@@ -4,30 +4,30 @@ import sys
 
 from BB.experiments_t_ham_10k import train_for_concepts
 
-sys.path.append(os.path.abspath("/ocean/projects/asc170022p/shg121/PhD/ICLR-2022"))
+sys.path.append(os.path.abspath("root-path"))
 
 parser = argparse.ArgumentParser(description='HAM10k Training')
 parser.add_argument('--data-root', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/HAM10k',
+                    default='root-path/data/HAM10k',
                     help='path to dataset')
 parser.add_argument('--logs', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/log',
+                    default='root-path/log',
                     help='path to tensorboard logs')
 parser.add_argument('--checkpoints', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints',
+                    default='root-path/checkpoints',
                     help='path to checkpoints')
 parser.add_argument('--output', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/out',
+                    default='root-path/out',
                     help='path to output logs')
 parser.add_argument('--bb-dir', metavar='DIR',
-                    default='/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/HAM10k/BB/Inception_V3',
+                    default='root-path/checkpoints/HAM10k/BB/Inception_V3',
                     help='path to BB')
 parser.add_argument('--seed', default=42, type=int, metavar='N', help='seed')
 parser.add_argument('--pretrained', type=bool, default=True, help='pretrained imagenet')
 parser.add_argument('--dataset', type=str, default="HAM10k", help='dataset name')
 parser.add_argument('--model-name', type=str, default="ham10000", help='name of the checkpoint')
 parser.add_argument(
-    '--derm7_folder', type=str, default="/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/data/Derm7pt",
+    '--derm7_folder', type=str, default="root-path/data/Derm7pt",
     help='DERM7_Folder'
 )
 parser.add_argument('--derm7_meta', type=str, default="meta.csv", help='DERM7_META')
@@ -54,7 +54,7 @@ parser.add_argument("--name", default="VIT_CUBS",
                     help="Name of this run. Used for monitoring.")
 parser.add_argument(
     "--pretrained_dir", type=str,
-    default="/ocean/projects/asc170022p/shg121/PhD/ICLR-2022/checkpoints/pretrained_VIT/ViT-B_16.npz",
+    default="root-path/checkpoints/pretrained_VIT/ViT-B_16.npz",
     help="Where to search for pretrained ViT models."
 )
 parser.add_argument("--pretrained_model", type=str, default=None,
